@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1, h2 {
+            color: #444;
+            text-align: center;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 20px 0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        label {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 80%;
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        .youtube-button {
+            background-color: #FF0000;
+            color: #fff;
+        }
+        .amazon-button {
+            background-color: #FF9900;
+            color: #fff;
+        }
+        .flipkart-button {
+            background-color: #2874f0;
+            color: #fff;
+        }
+        .myntra-button {
+            background-color: #ff3f6c;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>You can search for anything you need!</h1>
+        <hr>
+        <h2>YouTube Search :</h2>
+        <form target="_blank" action="https://www.youtube.com/results?search_query">
+            <label for="Search">Search On YouTube:</label>
+            <input type="text" name="search_query" id="Search">
+            <button class="youtube-button">Search on YouTube</button>
+        </form>
+        
+        <hr>
+        
+        <h2>Amazon Search :</h2>
+        <form target="_blank" action="https://www.amazon.in/s?k">
+            <label for="amazon">Search On Amazon:</label>
+            <input type="text" name="k" id="amazon">
+            <button class="amazon-button">Search on Amazon</button>
+        </form>
+        
+        <hr>
+        
+        <h2>Flipkart Search :</h2>
+        <form target="_blank" action="https://www.flipkart.com/search?q">
+            <label for="flipkart">Search On Flipkart:</label>
+            <input type="text" name="q" id="flipkart">
+            <button class="flipkart-button">Search on Flipkart</button>
+        </form>
+        
+        <hr>
+        
+        <h2>Myntra Search:</h2>
+        <form target="_blank" action="https://www.myntra.com/shirt?rawQuery">
+            <label for="myntra">Search On Myntra:</label>
+            <input type="text" name="rawQuery" id="myntra">
+            <button class="myntra-button">Search on Myntra</button>
+        </form>
+    </div>
+
+</body>
+</html>
