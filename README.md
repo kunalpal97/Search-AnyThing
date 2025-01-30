@@ -3,7 +3,8 @@ Live Link For Project is : https://kunalpal97.github.io/Search-AnyThing/
 
 I had added a urls of different website Like Youtube , amazon , Flipkart &amp; Myntra Into Simple Web Page And Added Little bit Inline CSS 
 
-![image](https://github.com/kunalpal97/Search-AnyThing/assets/124446202/35ffd81e-7bc4-414b-8e8f-1b161dd02411)
+![image](https://github.com/user-attachments/assets/ea482a3b-00a6-4fef-bc32-0de46b85b78e)
+
 
 Use this Web Application To Search Any Products At one Place and Compare the Prices of the Products....!
 
