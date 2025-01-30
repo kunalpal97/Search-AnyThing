@@ -3,119 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Form</title>
+    <title>Universal Search Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        h1, h2 {
-            color: #444;
-            text-align: center;
-        }
-        hr {
-            border: none;
-            border-top: 1px solid #ddd;
-            margin: 20px 0;
-        }
-        form {
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2d3436;
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .search-section {
+            background: #fff;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .search-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .search-header {
+            display: flex;
             align-items: center;
             margin-bottom: 20px;
         }
-        label {
-            font-size: 1.2em;
-            margin-bottom: 10px;
+
+        .search-header i {
+            font-size: 24px;
+            margin-right: 15px;
         }
+
+        .search-header h2 {
+            font-size: 1.5em;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        form {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .input-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
         input[type="text"] {
-            padding: 10px;
+            width: 100%;
+            padding: 12px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
             font-size: 1em;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            width: 80%;
-            max-width: 400px;
-            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            outline: none;
         }
+
+        input[type="text"]:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+
         button {
-            padding: 10px 20px;
-            font-size: 1em;
+            padding: 12px 25px;
             border: none;
-            border-radius: 4px;
+            border-radius: 10px;
+            color: white;
+            font-weight: 500;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
         }
+
+        button i {
+            font-size: 1.1em;
+        }
+
+        .youtube-section { background-color: #ffeaea; }
+        .amazon-section { background-color: #fff8e8; }
+        .flipkart-section { background-color: #eef4ff; }
+        .myntra-section { background-color: #ffe8ef; }
+
+        .youtube-button { background-color: #ff0000; }
+        .amazon-button { background-color: #ff9900; }
+        .flipkart-button { background-color: #2874f0; }
+        .myntra-button { background-color: #ff3f6c; }
+
         button:hover {
-            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
-        .youtube-button {
-            background-color: #FF0000;
-            color: #fff;
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .search-section {
+                padding: 20px;
+            }
+
+            form {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+                justify-content: center;
+            }
         }
-        .amazon-button {
-            background-color: #FF9900;
-            color: #fff;
-        }
-        .flipkart-button {
-            background-color: #2874f0;
-            color: #fff;
-        }
-        .myntra-button {
-            background-color: #ff3f6c;
-            color: #fff;
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .search-header h2 {
+                font-size: 1.2em;
+            }
         }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <h1>You can search for anything you need!</h1>
-        <hr>
-        <h2>YouTube Search :</h2>
-        <form target="_blank" action="https://www.youtube.com/results?search_query">
-            <label for="Search">Search On YouTube:</label>
-            <input type="text" name="search_query" id="Search">
-            <button class="youtube-button">Search on YouTube</button>
-        </form>
+        <h1>Universal Search Hub</h1>
         
-        <hr>
-        
-        <h2>Amazon Search :</h2>
-        <form target="_blank" action="https://www.amazon.in/s?k">
-            <label for="amazon">Search On Amazon:</label>
-            <input type="text" name="k" id="amazon">
-            <button class="amazon-button">Search on Amazon</button>
-        </form>
-        
-        <hr>
-        
-        <h2>Flipkart Search :</h2>
-        <form target="_blank" action="https://www.flipkart.com/search?q">
-            <label for="flipkart">Search On Flipkart:</label>
-            <input type="text" name="q" id="flipkart">
-            <button class="flipkart-button">Search on Flipkart</button>
-        </form>
-        
-        <hr>
-        
-        <h2>Myntra Search:</h2>
-        <form target="_blank" action="https://www.myntra.com/shirt?rawQuery">
-            <label for="myntra">Search On Myntra:</label>
-            <input type="text" name="rawQuery" id="myntra">
-            <button class="myntra-button">Search on Myntra</button>
-        </form>
-    </div>
+        <div class="search-section youtube-section">
+            <div class="search-header">
+                <i class="fab fa-youtube" style="color: #FF0000;"></i>
+                <h2>YouTube Search</h2>
+            </div>
+            <form target="_blank" action="https://www.youtube.com/results">
+                <div class="input-group">
+                    <input type="text" name="search_query" placeholder="Search videos, channels, and more...">
+                </div>
+                <button class="youtube-button">
+                    <i class="fas fa-search"></i>
+                    Search YouTube
+                </button>
+            </form>
+        </div>
 
+        <div class="search-section amazon-section">
+            <div class="search-header">
+                <i class="fab fa-amazon" style="color: #FF9900;"></i>
+                <h2>Amazon Search</h2>
+            </div>
+            <form target="_blank" action="https://www.amazon.in/s">
+                <div class="input-group">
+                    <input type="text" name="k" placeholder="Search products on Amazon...">
+                </div>
+                <button class="amazon-button">
+                    <i class="fas fa-search"></i>
+                    Search Amazon
+                </button>
+            </form>
+        </div>
+
+        <div class="search-section flipkart-section">
+            <div class="search-header">
+                <i class="fas fa-shopping-cart" style="color: #2874f0;"></i>
+                <h2>Flipkart Search</h2>
+            </div>
+            <form target="_blank" action="https://www.flipkart.com/search">
+                <div class="input-group">
+                    <input type="text" name="q" placeholder="Search products on Flipkart...">
+                </div>
+                <button class="flipkart-button">
+                    <i class="fas fa-search"></i>
+                    Search Flipkart
+                </button>
+            </form>
+        </div>
+
+        <div class="search-section myntra-section">
+            <div class="search-header">
+                <i class="fas fa-tshirt" style="color: #ff3f6c;"></i>
+                <h2>Myntra Search</h2>
+            </div>
+            <form target="_blank" action="https://www.myntra.com/search">
+                <div class="input-group">
+                    <input type="text" name="q" placeholder="Search fashion on Myntra...">
+                </div>
+                <button class="myntra-button">
+                    <i class="fas fa-search"></i>
+                    Search Myntra
+                </button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
